@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elena Fernández García - Homepage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Handlee&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #663399;
+            --secondary-color: #8a2be2;
+            --accent-color: #ffd700;
+            --background-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Raleway', sans-serif; /* Cambiado a Raleway */
+            font-weight: 300; /* Peso ligero */
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap'); /* Import Handlee font */
+
+.about-me-title {
+    font-family: 'Handlee', cursive;
+    text-align: center;
+    font-size: 2rem; /* Adjust size as needed */
+    margin-bottom: 1rem; /* Add spacing below */
+    color: var(--primary-color); /* Use primary color for consistency */
+}
+
+/* Add this to your CSS */
+.citation-name {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666; /* Subtle gray color */
+    margin-top: 0.2rem;
+    opacity: 0.8;
+}
+
+/* Update these nav-related styles */
+nav {
+    background-color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0; /* Added thin gray line, remove box-shadow */
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--primary-color); /* Changed to purple */
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: transparent; /* Removed background color change */
+    transform: none; /* Removed lift effect */
+    font-weight: bold;
+}
+
+/* Add these icons to your HTML navbar */
+.nav-container a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.nav-container a[href*="academic-cv"]::before {
+    content: "\f015"; /* Home icon */
+}
+
+.nav-container a[href*="research"]::before {
+    content: "\f005"; /* This is the galaxy/spiral icon */
+    /* OR */
+    /* content: "\f753"; */ /* This is the meteor icon */
+    /* OR */
+    /* content: "\f186"; */ /* This is the moon icon */
+}
+
+.nav-container a[href*="publications"]::before {
+    content: "\f02d"; /* Publications/book icon */
+}
+
+.nav-container a[href*="CV"]::before {
+    content: "\f15c"; /* CV/users icon */
+}
+
+        header {
+            padding: 6rem 0 4rem 0;
+            background-color: white;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+.profile-image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d; /* Necesario para aplicar la rotación 3D */
+}
+
+
+.profile-image-container:hover {
+    animation: rotateAndZoom 1s forwards; /* Ajusta el tiempo a 3s para dos rotaciones completas */
+    z-index: 3;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    transition: all 0.5s ease;
+    filter: brightness(1);
+}
+
+        .profile-image-container:hover .profile-image {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(102, 51, 153, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .profile-image-container::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--accent-color);
+            animation: spin 1s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-image-container:hover::after {
+            opacity: 1;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        
+        
+        /* Animación de rotación doble y zoom */
+@keyframes rotateAndZoom {
+    0% {
+        transform: rotateY(0deg); /* Comienza sin rotación */
+    }
+    50% {
+        transform: rotateY(180deg); /* Medio giro */
+    }
+    100% {
+        transform: rotateY(360deg) scale(1); /* Vuelve a la posición original */
+    }
+}
+
+        .text-container {
+            flex-grow: 1;
+            transition: all 0.5s ease;
+        }
+
+        .profile-container:hover .text-container {
+            transform: translateX(30px);
+        }
+
+        .name-container {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .name-container:hover {
+            transform: translateY(-2px);
+            text-shadow: 2px 2px 4px rgba(102, 51, 153, 0.3);
+        }
+
+        .first-name {
+            font-weight: bold;
+            font-size: 2.8rem;
+        }
+
+        .last-name {
+            font-style: italic;
+            font-size: 2.8rem;
+        }
+
+        .title {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .institution {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .institution:hover {
+            color: var(--secondary-color);
+        }
+        
+        
+        /* Add this to your CSS styles */
+.highlight {
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+section:hover .highlight {
+    animation: blink-color 2s infinite;
+        transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(102, 51, 153, 0.3);
+    z-index: 2;
+}
+
+@keyframes blink-color {
+    0% { color: var(--primary-color); }
+    50% { color: var(--accent-color); }
+    100% { color: var(--primary-color); }
+}
+
+
+/* Add these transition styles to your existing CSS */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a1a1a, #663399, #8a2be2);
+    transform: scaleX(0);
+    transform-origin: right;
+    z-index: 9999;
+    animation: none;
+    pointer-events: none;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    100% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+}
+
+/* Add this to make the content fade */
+.content-container {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.content-container.fade-out {
+    opacity: 0;
+}
+
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 1;
+            max-width: 800px; /* Added max-width */
+            width: 100%; /* Added to maintain responsiveness */
+        }
+
+        section:hover {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 15px 30px rgba(102, 51, 153, 0.3);
+            z-index: 2;
+        }
+
+        section p {
+            transition: all 0.1s ease;
+        }
+
+        section:hover p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            border-radius: 8px;
+        }
+
+        section:hover::after {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            padding: 1rem;
+        }
+
+        .social-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 2rem;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .social-link:hover {
+            color: white;
+            background-color: var(--primary-color);
+            transform: translateY(-8px) rotate(360deg) scale(1.1);
+            box-shadow: 0 8px 20px rgba(102, 51, 153, 0.4);
+        }
+
+        .social-link:hover i {
+            animation: pulse 1s infinite;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .profile-image-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .text-container {
+                text-align: center;
+            }
+
+            header {
+                padding: 5rem 0 2rem 0;
+            }
+
+            .nav-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="academic-cv-purple.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="CV.html">CV</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="profile-container">
+            <div class="profile-image-container">
+                <img src="elena.jpeg" alt="Elena Fernández García" class="profile-image">
+            </div>
+            <div class="text-container">
+                <div class="name-container">
+                    <span class="first-name">Elena</span> 
+                    <span class="last-name">Fernández García</span>
+                </div>
+                <div class="title">PhD Candidate in Cosmology</div>
+                <a href="https://www.iaa.es/" target="_blank" class="institution">Instituto de Astrofísica de Andalucía (IAA-CSIC)</a>
+            </div>
+        </div>
+    </header>
+
+<main class="container">
+
+<section>
+     <h2 class="about-me-title">List of publications</h2>
+    <ol class="fancy-list">
+        <li>
+            <span class="icon"><i class="fas fa-book"></i></span>
+            Fernández-García, E., Betancort-Rĳo, J. E., Prada, F., Ishiyama, T., & Klypin, A. 2024, arXiv e-prints, arXiv:2406.13736, doi: <a href="https://doi.org/10.48550/arXiv.2406.13736" target="_blank">10.48550/arXiv.2406.13736</a>. <br>
+            <div class="tooltip">We identify voids as maximal non-overlapping spheres within the haloes of the Uchuu simulation and three smaller halo simulation boxes with smaller volume and different <i>σ8</i> values, and galaxies with redshift in the range <i>0.02 &lt; z &lt; 0.132</i> and absolute magnitude in the <i>r−band</i> <i>M<sub>r</sub> &lt; −20.5</i> of 32 Uchuu-SDSS simulated lightcones the seventh release of <i>The Sloan Digital Sky Survey</i> (SDSS DR7) survey. 
+    We compute the Void Probability Function and the abundance of voids larger than <i>r</i> predicted by the theoretical framework used in this work and we check that it predicts successfully both void functions for the halo simulation boxes. Next, we assess the potential of this theoretical framework to constrain cosmological parameters using Uchuu-SDSS void statistics, and we calculate the confidence levels using Monte Carlo Markov Chain techniques to infer the values of <i>σ8</i>, <i>Ω<sub>m</sub></i> and <i>H<sub>0</sub></i> from the SDSS sample used. 
+    The constraints we obtain from the SDSS survey sample used. The results are: 
+    <i>σ8</i> = 1.028<sup>+0.273</sup><sub>−0.305</sub>, <i>Ω<sub>m</sub></i> = 0.296<sup>+0.110</sup><sub>−0.102</sub>, <i>H<sub>0</sub></i> = 83.43<sup>+29.27</sup><sub>−27.70</sub>, <i>Γ</i> = 0.1947<sup>+0.0578</sup><sub>−0.0516</sub> and <i>S8</i> = 1.017<sup>+0.363</sup><sub>−0.359</sub>. If we combine these constraints with KiDS-1000+DESY3, we get 
+    <i>σ8</i> = 0.858<sup>+0.040</sup><sub>−0.040</sub>, <i>Ω<sub>m</sub></i> = 0.257<sup>+0.023</sup><sub>−0.020</sub>, <i>H<sub>0</sub></i> = 74.17<sup>+4.66</sup><sub>−4.66</sub> and <i>S8</i> = 0.794<sup>+0.016</sup><sub>−0.016</sub>. 
+    The combined uncertainties are approximately a factor 2-3 smaller than only-Weak-Lensing uncertainties. This is a consequence of the orientation of the confidence level contours of SDSS voids and Weak Lensing in the plane <i>σ8−Ωm</i>, which are almost orthogonal (abridged).</div>
+        </li>
+        <li>
+            <span class="icon"><i class="fas fa-book"></i></span>
+            Author, A. et al. *Another Paper*. <br>
+            DOI: <a href="https://doi.org/exampledoi" target="_blank">10.1234/exampledoi</a>
+            <div class="tooltip">This paper explores... (add full abstract here).</div>
+        </li>
+        <li>
+            <span class="icon"><i class="fas fa-book"></i></span>
+            Author, B. et al. *Yet Another Paper*. <br>
+            DOI: <a href="https://doi.org/anotherexampledoi" target="_blank">10.5678/anotherexampledoi</a>
+            <div class="tooltip">This paper analyzes... (add full abstract here).</div>
+        </li>
+    </ol>
+</section>
+
+<style>
+/* Fancy list styling */
+.fancy-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.fancy-list li {
+    position: relative;
+    padding-left: 2.5em;
+    margin-bottom: 1em;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.fancy-list li:hover {
+    transform: scale(1.02);
+    color: #6a0dad; /* Purple highlight */
+}
+
+.fancy-list .icon {
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    font-size: 1.2em;
+    color: #6a0dad; /* Purple color for the icon */
+    animation: bounce 1s infinite ease-in-out;
+}
+
+/* Tooltip styling (the abstract box) */
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 700px; /* Moves tooltip even further to the left */
+    transform: translateY(-50%);
+    background: #6a0dad;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.5em;
+    border-radius: 5px;
+    white-space: pre-wrap; /* Allows wrapping for longer text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 450px; /* Set width */
+    max-height: 200px; /* Set maximum height */
+    overflow-y: auto; /* Enables scroll if content is too long */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+}
+
+.fancy-list li:hover .tooltip {
+    display: block;
+    opacity: 1;
+}
+
+/* Arrow for the tooltip to point to the list item */
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px; /* Moves arrow to the left */
+    transform: translateY(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #6a0dad transparent transparent; /* Points the arrow left */
+}
+
+/* Add arrow shadow effect */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px; /* Offset for shadow effect */
+    transform: translateY(-50%);
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.2) transparent transparent; /* Shadow on the left */
+}
+
+</style>
+
+
+
+
+
+
+        <div class="social-links">
+            <a href="https://scholar.google.es/citations?user=Zg9FdwYAAAAJ&hl=es" target="_blank" class="social-link" title="Google Scholar">
+                <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/elenaferga" target="_blank" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://orcid.org/0009-0006-2125-9590" target="_blank" class="social-link" title="ORCID">
+                <i class="fab fa-orcid"></i>
+            </a>
+        </div>
+    </main>
+    
+    
+
+</body>
+</html>
