@@ -61,7 +61,7 @@
 
         nav a {
             font-family: 'Raleway', sans-serif;
-            color: var(--primary-color);
+            color: black; /* Color del texto de Home a negro */
             text-decoration: none;
             font-size: 1.1rem;
             padding: 0.5rem 1rem;
@@ -71,19 +71,35 @@
             gap: 0.5rem;
             font-weight: normal;
             border-radius: 4px;
+            position: relative;
         }
 
         nav a:hover {
             font-weight: bold;
-            background-color: transparent; /* Removed background color change */
+            color: black(--secondary-color);
             transform: translateY(-2px);
-            color: var(--secondary-color);
+        }
+
+
+        nav a:hover::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('yellow-painting-marks.png'); /* Ruta de la imagen */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6; /* Opacidad para hacerla visible detrás del texto */
+            border-radius: 4px;
+            z-index: -1; /* Para que la imagen quede detrás del texto */
+            transition: opacity 0.3s ease;
         }
 
         nav a i {
             font-size: 1.2rem;
         }
-
 
 
 	/* Add these icons to your HTML navbar */
@@ -97,7 +113,7 @@
 	}
 
 	.nav-container a[href*="research"]::before {
-		content: "\f005"; /* This is the galaxy/spiral icon */
+		content: "\f19d"; /* This is the galaxy/spiral icon */
 		/* OR */
 		/* content: "\f753"; */ /* This is the meteor icon */
 		/* OR */
@@ -223,7 +239,7 @@
 
         .title {
             font-size: 1rem;
-            color: var(--primary-color);
+            color: black(--primary-color);
             margin-bottom: 0.3rem;
         }
         
@@ -255,13 +271,13 @@
         .institution {
             font-size: 1rem;
             font-style: italic;
-            color: var(--primary-color);
+            color: black(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .institution:hover {
-            color: var(--secondary-color);
+            color: black(--secondary-color);
         }
         
         
@@ -422,6 +438,52 @@
 		}
 	}
 
+
+/* Keyword container and boxes */
+    .keyword-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    .keyword-box {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 30%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .keyword-box:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+    }
+
+    .keyword-symbol {
+        font-size: 2rem;
+        color: #663399; /* Purple */
+    }
+
+    .keyword-text {
+        font-size: 1.1rem;
+        color: #000; /* Black */
+    }
+
+    @media (max-width: 768px) {
+        .keyword-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .keyword-box {
+            width: 100%;
+        }
+    }
+
         
     </style>
     
@@ -447,7 +509,7 @@
     <nav>
         <div class="nav-container">
             <a href="academic-cv-purple.html">Home</a>
-            <a href="research.html">Research</a>
+            <a href="research.html">Experience</a>
             <a href="publications.html">Publications</a>
             <a href="CV.html">CV</a>
         </div>
@@ -472,21 +534,41 @@
     </header>
 
     <section>
-        <h2 class="about-me-title">About me</h2>
-        <p>
-            I am a second-year PhD candidate at the 
-            <span class="highlight">Instituto de Astrofísica de Andalucía</span> (IAA-CSIC), 
-            where I focus on understanding the fundamental nature of our universe through various cosmological approaches. 
-            My research combines theoretical work on <span class="highlight">cosmic voids</span>, 
-            <span class="highlight">conformal models</span>, and <span class="highlight">numerical simulations</span>.
-        </p>
-        <br>
-        <p>
-            As a member of the <span class="highlight">DESI</span> collaboration, I contribute to advancing our understanding of 
-            dark energy through extensive simulation work. My expertise lies in applying the <span class="highlight">SHAM</span> method 
-            to the <span class="highlight">Uchuu</span> simulation, helping bridge the gap between theoretical models and observational data.
-        </p>
-    </section>
+    <h2 class="about-me-title">About me</h2>
+    <p>
+        I am a second-year PhD candidate at the 
+        <span class="highlight">Instituto de Astrofísica de Andalucía</span> (IAA-CSIC), 
+        where I focus on understanding the fundamental nature of our universe through various cosmological approaches. 
+        My research combines theoretical work on <span class="highlight">cosmic voids</span>, 
+        <span class="highlight">conformal models</span>, and <span class="highlight">numerical simulations</span>.
+    </p>
+    <br>
+    <p>
+        As a member of the <span class="highlight">DESI</span> collaboration, I contribute to advancing our understanding of 
+        dark energy through extensive simulation work. My expertise lies in applying the <span class="highlight">SHAM</span> method 
+        to the <span class="highlight">Uchuu</span> simulation, helping bridge the gap between theoretical models and observational data.
+    </p>
+
+    <!-- New Keyword Boxes -->
+    <div class="keyword-container">
+        <div class="keyword-box">
+            <span class="keyword-symbol">•</span>
+            <span class="keyword-text">Cosmic Voids</span>
+        </div>
+        <div class="keyword-box">
+            <span class="keyword-symbol">•</span>
+            <span class="keyword-text">Conformal Models</span>
+        </div>
+        <div class="keyword-box">
+            <span class="keyword-symbol">•</span>
+            <span class="keyword-text">Numerical Simulations</span>
+        </div>
+    </div>
+</section>
+
+    
+    
+    
 
     <div class="social-links">
         <a href="https://scholar.google.es/citations?user=Zg9FdwYAAAAJ&hl=es" target="_blank" class="social-link" title="Google Scholar">
