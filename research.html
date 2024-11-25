@@ -484,6 +484,46 @@
         }
     }
 
+
+.wide-section {
+    width: 90%; /* Cambia este valor según lo que necesites */
+    max-width: 1200px; /* Opcional, establece un límite máximo */
+    margin: 0 auto; /* Centra la sección horizontalmente */
+    background-color: #f0f0f0; /* Solo para visualizar la sección */
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Secciones básicas */
+.left-section, .right-section {
+    width: 45%; /* Ambas secciones ocupan el 45% del ancho */
+    transition: all 0.3s ease; /* Suaviza la transición al agrandarse */
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Agrandar la sección al pasar el cursor */
+.left-section:hover, .right-section:hover {
+    width: 55%; /* Se agranda al pasar el cursor */
+}
+
+/* Reducir la otra sección cuando una se agranda */
+.left-section:hover ~ .right-section,
+.right-section:hover ~ .left-section {
+    width: 35%; /* La otra sección se reduce */
+}
+
         
     </style>
     
@@ -531,14 +571,81 @@
             </div>
         </div>
 
+
+
     </header>
 
-    <section>
 
-</section>
 
-    
-    
+
+
+<div class="container">
+    <section class="left-section" style="background-color: #FFFFFF; color: #1C1C28; padding: 2rem; border-radius: 15px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); display: flex; gap: 2rem; justify-content: space-between;">
+    <div style="width: 100%; padding: 1.5rem; border-radius: 10px;">
+        <h2 style="font-size: 2rem; color: #6A0DAD; text-align: center; font-family: 'Raleway', serif; margin-bottom: 2rem;">
+            Experience
+        </h2>
+        <ul style="list-style-type: none; padding: 0; font-size: 1.2rem; line-height: 2; font-family: 'Raleway', sans-serif;">
+            <li style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.5rem; color: #D4AF37;">&#x1F4CD;</span> 
+                <span style="font-weight: bold; color: #6A0DAD;">DESI Collaboration Meeting</span>  
+                <em style="color: #D4AF37;">Marseille, France.</em>  
+                <span style="display: block; color: #1C1C28; margin-top: 0.3rem;">July 2024</span>
+                <span style="display: block; color: #1C1C28; margin-top: 0.2rem;">Talk given: Missing components from a Conformal-LCDM</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.5rem; color: #D4AF37;">&#x1F4CD;</span> 
+                <span style="font-weight: bold; color: #6A0DAD;">X Meeting on Fundamental Cosmology</span>  
+                <em style="color: #D4AF37;">Seville, Spain.</em>  
+                <span style="display: block; color: #1C1C28; margin-top: 0.3rem;">October 2024</span>
+                <span style="display: block; color: #1C1C28; margin-top: 0.2rem;">Talk given: Constraining cosmological parameters using void statistics from the SDSS survey</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.5rem; color: #D4AF37;">&#x1F4CD;</span> 
+                <span style="font-weight: bold; color: #6A0DAD;">DESI Collaboration Meeting</span>  
+                <em style="color: #D4AF37;">Cancún, Mexico.</em>  
+                <span style="display: block; color: #1C1C28; margin-top: 0.3rem;">December 2024</span>
+                <span style="display: block; color: #1C1C28; margin-top: 0.2rem;">Two talks: Uchuu and Missing components from a Conformal-LCDM</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.5rem; color: #D4AF37;">&#x1F4CD;</span> 
+                <span style="font-weight: bold; color: #6A0DAD;">Tutor School</span>  
+                <em style="color: #D4AF37;">Kyoto, Japan.</em>  
+                <span style="display: block; color: #1C1C28; margin-top: 0.3rem;">June 2025</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.5rem; color: #D4AF37;">&#x1F4CD;</span> 
+                <span style="font-weight: bold; color: #6A0DAD;">24th International Conference on General Relativity and Gravitation & 16th Edoardo Amaldi Conference on Gravitational Waves</span>  
+                <em style="color: #D4AF37;">Glasgow, UK.</em>  
+                <span style="display: block; color: #1C1C28; margin-top: 0.3rem;">July 2025</span>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section class="right-section" style="background-color: #FFFFFF; color: #1C1C28; padding: 2rem; border-radius: 15px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); display: flex; gap: 2rem; justify-content: space-between;">
+    <div style="width: 100%; padding: 1.5rem; border-radius: 10px;">
+        <h2 style="font-size: 2rem; color: #6A0DAD; text-align: center; font-family: 'Raleway', serif; margin-bottom: 2rem;">
+            Courses & Schools
+        </h2>
+        <ul style="list-style-type: none; padding: 0; font-size: 1.2rem; line-height: 2; font-family: 'Raleway', sans-serif;">
+            <li style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.5rem; color: #D4AF37;">&#x1F4CD;</span> 
+                <span style="font-weight: bold; color: #6A0DAD;">New Opportunities to Test Cosmology</span>  
+                <em style="color: #D4AF37;">Heidelberg, Germany.</em>  
+                <span style="display: block; color: #1C1C28; margin-top: 0.3rem;">September 2024</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.5rem; color: #D4AF37;">&#x1F4CD;</span> 
+                <span style="font-weight: bold; color: #6A0DAD;">SO training Introduction to Github</span>  
+                <em style="color: #D4AF37;">Granada, Spain.</em>  
+                <span style="display: block; color: #1C1C28; margin-top: 0.3rem;">December 2024</span>
+            </li>
+        </ul>
+    </div>
+    </section>
+</div>
+
+
     
 
     <div class="social-links">
