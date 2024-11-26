@@ -27,7 +27,11 @@
             box-sizing: border-box;
         }
         
-        
+        h1 {
+            text-align: center; /* Centra solo el título */
+            margin-top: 5px; /* Espacio superior */
+            margin-bottom: 20px; /* Espacio superior */
+        }
         /* Base Styles */
         body {
             font-family: 'Raleway', sans-serif;
@@ -36,6 +40,7 @@
             color: var(--text-color);
             background-color: var(--background-color);
             position: relative;
+
         }
         
         
@@ -238,12 +243,25 @@
         }
 
         .title {
-            font-size: 1rem;
+            font-weight: 900;
+            font-size: 1.1rem;
             color: black(--primary-color);
             margin-bottom: 0.3rem;
         }
         
+        .authors {
+            font-style: italic;
+        }      
         
+        .link a {
+            text-decoration: none;
+            color: #ffd700;
+        } 
+
+        .list-item {
+            display: flex;
+            align-items: center;
+        } 
         .about-me-title {
 		font-family: 'Handlee', cursive;
 		text-align: center;
@@ -308,12 +326,6 @@
             z-index: 1;
             max-width: 800px; /* Added max-width */
             width: 100%; /* Added to maintain responsiveness */
-        }
-
-        section:hover {
-            transform: scale(1.1) translateY(-10px);
-            box-shadow: 0 15px 30px rgba(102, 51, 153, 0.3);
-            z-index: 2;
         }
 
         section p {
@@ -484,21 +496,23 @@
         }
     }
 
+         ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+        }       
         
+        .circle {
+            width: 12px;
+            height: 12px;
+            border: 2px solid purple;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
     </style>
     
-    
-    
-    
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRQKJX94KG"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
- 		gtag('js', new Date());
-
- 		gtag('config', 'G-HRQKJX94KG');
-	</script>
 
     
 </head>
@@ -534,117 +548,36 @@
 
 <main class="container">
 
-<section>
-     <h2 class="about-me-title">List of publications</h2>
-    <ol class="fancy-list">
-        <li>
-            <span class="icon"><i class="fas fa-book"></i></span>
-            Fernández-García, E., Betancort-Rĳo, J. E., Prada, F., Ishiyama, T., & Klypin, A. 2024, arXiv e-prints, arXiv:2406.13736, doi: <a href="https://doi.org/10.48550/arXiv.2406.13736" target="_blank">10.48550/arXiv.2406.13736</a>. <br>
-            <div class="tooltip">We identify voids as maximal non-overlapping spheres within the haloes of the Uchuu simulation and three smaller halo simulation boxes with smaller volume and different <i>σ8</i> values, and galaxies with redshift in the range <i>0.02 &lt; z &lt; 0.132</i> and absolute magnitude in the <i>r−band</i> <i>M<sub>r</sub> &lt; −20.5</i> of 32 Uchuu-SDSS simulated lightcones the seventh release of <i>The Sloan Digital Sky Survey</i> (SDSS DR7) survey. 
-    We compute the Void Probability Function and the abundance of voids larger than <i>r</i> predicted by the theoretical framework used in this work and we check that it predicts successfully both void functions for the halo simulation boxes. Next, we assess the potential of this theoretical framework to constrain cosmological parameters using Uchuu-SDSS void statistics, and we calculate the confidence levels using Monte Carlo Markov Chain techniques to infer the values of <i>σ8</i>, <i>Ω<sub>m</sub></i> and <i>H<sub>0</sub></i> from the SDSS sample used. 
-    The constraints we obtain from the SDSS survey sample used. The results are: 
-    <i>σ8</i> = 1.028<sup>+0.273</sup><sub>−0.305</sub>, <i>Ω<sub>m</sub></i> = 0.296<sup>+0.110</sup><sub>−0.102</sub>, <i>H<sub>0</sub></i> = 83.43<sup>+29.27</sup><sub>−27.70</sub>, <i>Γ</i> = 0.1947<sup>+0.0578</sup><sub>−0.0516</sub> and <i>S8</i> = 1.017<sup>+0.363</sup><sub>−0.359</sub>. If we combine these constraints with KiDS-1000+DESY3, we get 
-    <i>σ8</i> = 0.858<sup>+0.040</sup><sub>−0.040</sub>, <i>Ω<sub>m</sub></i> = 0.257<sup>+0.023</sup><sub>−0.020</sub>, <i>H<sub>0</sub></i> = 74.17<sup>+4.66</sup><sub>−4.66</sub> and <i>S8</i> = 0.794<sup>+0.016</sup><sub>−0.016</sub>. 
-    The combined uncertainties are approximately a factor 2-3 smaller than only-Weak-Lensing uncertainties. This is a consequence of the orientation of the confidence level contours of SDSS voids and Weak Lensing in the plane <i>σ8−Ωm</i>, which are almost orthogonal (abridged).</div>
-        </li>
-        <li>
-            <span class="icon"><i class="fas fa-book"></i></span>
-            Author, A. et al. *Another Paper*. <br>
-            DOI: <a href="https://doi.org/exampledoi" target="_blank">10.1234/exampledoi</a>
-            <div class="tooltip">This paper explores... (add full abstract here).</div>
-        </li>
-        <li>
-            <span class="icon"><i class="fas fa-book"></i></span>
-            Author, B. et al. *Yet Another Paper*. <br>
-            DOI: <a href="https://doi.org/anotherexampledoi" target="_blank">10.5678/anotherexampledoi</a>
-            <div class="tooltip">This paper analyzes... (add full abstract here).</div>
-        </li>
-    </ol>
-</section>
+    <section>
+        <h1>List of Publications</h1>
+        <ul>
+            <li>
+                <div class="list-item">
+                    <span class="circle"></span>
+                    <div class="title">Constraining cosmological parameters using void statistics from the SDSS survey</div>
+                </div>
+                <div class="authors"> Elena Fernández-García, Juan E. Betancort-Rijo, Francisco Prada, Tomoaki Ishiyama, Anatoly Klypin</div>
+                <div class="link"><a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240613736F/abstract" target="_blank">arXiv:2406.13736</a></div>
+            </li>
+            <li>
+                <div class="list-item">
+                    <span class="circle"></span>
+                    <div class="title">Título del Paper 2</div>
+                </div>
+                <div class="authors">Autor 1, Autor 2, Autor 3</div>
+                <div class="link"><a href="https://enlace-al-paper2.com" target="_blank">https://enlace-al-paper2.com</a></div>
+            </li>
+            <li>
+                <div class="list-item">
+                    <span class="circle"></span>
+                    <div class="title">Título del Paper 3</div>
+                </div>
+                <div class="authors">Autor 1, Autor 2, Autor 3</div>
+                <div class="link"><a href="https://enlace-al-paper3.com" target="_blank">https://enlace-al-paper3.com</a></div>
+            </li>
+        </ul>
+    </section>
 
-<style>
-/* Fancy list styling */
-.fancy-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.fancy-list li {
-    position: relative;
-    padding-left: 2.5em;
-    margin-bottom: 1em;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
-    color: #333;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.fancy-list li:hover {
-    transform: scale(1.02);
-    color: #6a0dad; /* Purple highlight */
-}
-
-.fancy-list .icon {
-    position: absolute;
-    left: 0;
-    top: 0.2em;
-    font-size: 1.2em;
-    color: #6a0dad; /* Purple color for the icon */
-    animation: bounce 1s infinite ease-in-out;
-}
-
-/* Tooltip styling (the abstract box) */
-.tooltip {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 700px; /* Moves tooltip even further to the left */
-    transform: translateY(-50%);
-    background: #6a0dad;
-    color: #fff;
-    font-size: 0.9rem;
-    padding: 0.5em;
-    border-radius: 5px;
-    white-space: pre-wrap; /* Allows wrapping for longer text */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    width: 450px; /* Set width */
-    max-height: 200px; /* Set maximum height */
-    overflow-y: auto; /* Enables scroll if content is too long */
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    opacity: 0;
-}
-
-.fancy-list li:hover .tooltip {
-    display: block;
-    opacity: 1;
-}
-
-/* Arrow for the tooltip to point to the list item */
-.tooltip::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -10px; /* Moves arrow to the left */
-    transform: translateY(-50%);
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent #6a0dad transparent transparent; /* Points the arrow left */
-}
-
-/* Add arrow shadow effect */
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -15px; /* Offset for shadow effect */
-    transform: translateY(-50%);
-    border-width: 12px;
-    border-style: solid;
-    border-color: transparent rgba(0, 0, 0, 0.2) transparent transparent; /* Shadow on the left */
-}
-
-</style>
 
 
 
